@@ -62,7 +62,7 @@ cd build
 ./database_tests 
 ```
 
-## 🗄️ Database
+## 🔄 Overview of the Structure
 
 ```mermaid
 classDiagram
