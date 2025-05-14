@@ -12,6 +12,8 @@ SQLite3 (via SQLiteCpp wrapper)
 
 Standard C++ STL (for data handling and file I/O)
 
+Catch2 (for unit testing)
+
 ## 🧠 Features
 
 Add, delete, and mark tasks as complete/incomplete.
@@ -38,6 +40,26 @@ make -j8
 ```shell
 cd build
 sqlite3 tasks.db
+```
+
+## 🧪 Test Coverage
+The project includes unit tests using Catch2 to ensure reliability and correctness of core functionality. Tests are written for:
+
+Adding tasks
+
+Deleting a single task
+
+Changing task completion status
+
+Deleting all tasks
+
+Database persistence and structure
+
+To run the test cases:
+
+```shell
+cd build
+./database_tests 
 ```
 
 ## 🗄️ Database
