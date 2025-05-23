@@ -41,6 +41,7 @@ mkdir build
 cd build
 cmake ..
 make -j8
+./todo_list
 ```
 
 ## 🔍 How to Access the Database
