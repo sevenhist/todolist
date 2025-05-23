@@ -2,7 +2,7 @@
 
 This project is a To-Do List application built with C++ and wxWidgets that allows users to create, manage, and persistently store their tasks. It integrates SQLite3 as a lightweight relational database to ensure tasks are saved across sessions. The application's user interface is intuitive, and designed with simplicity in mind. The application automatically adapts to all devices.
 
-🎨 Wireframe
+## 🎨 Wireframe
 To help visualize the application's design and user flow, a detailed wireframe of the project has been created. It provides a clear overview of the UI layout and interaction, serving as a blueprint for development and future improvements.
 ![Wireframe](./wireframe/Task_List.png)
 You can also explore the interactive wireframe online here:
