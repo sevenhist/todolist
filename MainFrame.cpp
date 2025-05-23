@@ -15,7 +15,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title),
 }
 
 void MainFrame::CreateControls() {
-    wxFont headLineFont(wxFontInfo(wxSize(0, 36)).Bold());
+    wxFont headLineFont(wxFontInfo(wxSize(0, 40)).Bold());
     wxFont mainFont(wxFontInfo(wxSize(0, 16)));
 
     panel = new wxPanel(this);
