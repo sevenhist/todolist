@@ -1,6 +1,6 @@
 ## 📝 Storing Tasks Data in a SQLite3 Database
 
-This project is a To-Do List application built with C++ and wxWidgets that allows users to create, manage, and persistently store their tasks. It integrates SQLite3 as a lightweight relational database to ensure tasks are saved across sessions. The application's user interface is intuitive, and designed with simplicity in mind.
+This project is a To-Do List application built with C++ and wxWidgets that allows users to create, manage, and persistently store their tasks. It integrates SQLite3 as a lightweight relational database to ensure tasks are saved across sessions. The application's user interface is intuitive, and designed with simplicity in mind. The application automatically adapts to all devices.
 
 ## 📦 Technologies Used
 
@@ -17,6 +17,8 @@ Catch2 (for unit testing)
 ## 🧠 Features
 
 Add, delete, and mark tasks as complete/incomplete.
+
+Automatic adaptation
 
 Keyboard shortcuts for task management.
 

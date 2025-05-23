@@ -21,7 +21,7 @@ void MainFrame::CreateControls() {
     panel = new wxPanel(this);
     panel->SetFont(mainFont);
 
-    headLineText = new wxStaticText(panel, wxID_ANY, "To-Do List");
+    headLineText = new wxStaticText(panel, wxID_ANY, "Task list 📝");
     headLineText->SetFont(headLineFont);
     //headLineText->SetBackgroundColour(*wxRED);
 
@@ -47,9 +47,12 @@ void MainFrame::SetupSizers() {
     mainSizer->AddSpacer(15);
     mainSizer->Add(checkListBox, wxSizerFlags().Expand().Proportion(1));
     mainSizer->AddSpacer(15);
-    mainSizer->Add(clearButton);
-    mainSizer->AddSpacer(15);
-    mainSizer->Add(deleteButton);
+
+    wxBoxSizer* buttonsSizer = new wxBoxSizer(wxHORIZONTAL);
+    buttonsSizer->Add(clearButton, wxSizerFlags().Expand()); // expand means that button have all available height
+    buttonsSizer->AddStretchSpacer(1);
+    buttonsSizer->Add(deleteButton, wxSizerFlags().Expand()); 
+    mainSizer->Add(buttonsSizer, wxSizerFlags().Expand());  
 
     wxGridSizer* outerSizer = new wxGridSizer(1);
     outerSizer->Add(mainSizer, wxSizerFlags().Border(wxALL, 40).Expand());
