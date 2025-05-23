@@ -9,6 +9,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title),
 {
     db_.deleteAllTasks();
     CreateControls();
+    SetupSizers();
     BindEventHandlers();
     AddSavedTasks();
 }
@@ -20,16 +21,41 @@ void MainFrame::CreateControls() {
     panel = new wxPanel(this);
     panel->SetFont(mainFont);
 
-    headLineText = new wxStaticText(panel, wxID_ANY, "To-Do List", 
-        wxPoint(0, 22), wxSize(800, -1), wxALIGN_CENTER_HORIZONTAL);
+    headLineText = new wxStaticText(panel, wxID_ANY, "To-Do List");
     headLineText->SetFont(headLineFont);
     //headLineText->SetBackgroundColour(*wxRED);
 
-    inputField = new wxTextCtrl(panel, wxID_ANY, "", wxPoint(100, 80), wxSize(495, 35), wxTE_PROCESS_ENTER);
-    addButton = new wxButton(panel, wxID_ANY, "Add", wxPoint(600, 80), wxSize(100, 35));
-    checkListBox = new wxCheckListBox(panel, wxID_ANY, wxPoint(100, 120), wxSize(600, 400));
-    clearButton = new wxButton(panel, wxID_ANY, "Clear", wxPoint(100, 525), wxSize(100, 35));
-    deleteButton = new wxButton(panel, wxID_ANY, "Delete Task", wxPoint(300, 525), wxSize(100, 35));
+    inputField = new wxTextCtrl(panel, wxID_ANY, "", wxDefaultPosition, wxDefaultSize, wxTE_PROCESS_ENTER);
+    addButton = new wxButton(panel, wxID_ANY, "Add");
+    checkListBox = new wxCheckListBox(panel, wxID_ANY);
+    clearButton = new wxButton(panel, wxID_ANY, "Clear");
+    deleteButton = new wxButton(panel, wxID_ANY, "Delete Task");
+}
+
+void MainFrame::SetupSizers() {
+
+    wxBoxSizer* mainSizer = new wxBoxSizer(wxVERTICAL);
+    mainSizer->Add(headLineText, wxSizerFlags().CenterHorizontal());
+    mainSizer->AddSpacer(30);
+
+    wxBoxSizer* inputSizer = new wxBoxSizer(wxHORIZONTAL);
+    inputSizer->Add(inputField, wxSizerFlags().Proportion(1));
+    inputSizer->AddSpacer(15);
+    inputSizer->Add(addButton);
+
+    mainSizer->Add(inputSizer, wxSizerFlags().Expand());
+    mainSizer->AddSpacer(15);
+    mainSizer->Add(checkListBox, wxSizerFlags().Expand().Proportion(1));
+    mainSizer->AddSpacer(15);
+    mainSizer->Add(clearButton);
+    mainSizer->AddSpacer(15);
+    mainSizer->Add(deleteButton);
+
+    wxGridSizer* outerSizer = new wxGridSizer(1);
+    outerSizer->Add(mainSizer, wxSizerFlags().Border(wxALL, 40).Expand());
+
+    panel->SetSizer(outerSizer);
+    outerSizer->SetSizeHints(this);
 }
 
 void MainFrame::BindEventHandlers() {

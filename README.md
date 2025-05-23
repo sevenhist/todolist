@@ -74,6 +74,7 @@ classDiagram
     class MainFrame {
         +MainFrame(wxString title)
         -void CreateControls()
+        -void SetupSizers()
         -void BindEventHandlers()
         -void AddSavedTasks()
         -void AddTaskFromInput()
