@@ -5,7 +5,7 @@ This project is a To-Do List application built with C++ and wxWidgets that allow
 ## Setup
 Install the required dependencies:
 ```shell
-sudo apt install sqlite3
+apt install libsqlitecpp-dev
 ```
 
 ## 🎨 Wireframe
