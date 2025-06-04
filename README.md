@@ -4,7 +4,9 @@ This project is a To-Do List application built with C++ and wxWidgets that allow
 
 ## Setup
 Install the required dependencies:
+```shell
 sudo apt install sqlite3
+```
 
 ## 🎨 Wireframe
 To help visualize the application's design and user flow, a detailed wireframe of the project has been created. It provides a clear overview of the UI layout and interaction, serving as a blueprint for development and future improvements.
